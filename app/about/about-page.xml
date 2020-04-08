@@ -1,0 +1,29 @@
+<Page
+    navigatingTo="onNavigatingTo"  
+    xmlns="http://schemas.nativescript.org/tns.xsd">
+
+    <ActionBar>
+        <!-- 
+        Use the NavigationButton as a side-drawer button in Android
+        because ActionItems are shown on the right side of the ActionBar
+        -->
+        <NavigationButton ios:visibility="collapsed" icon="res://menu" tap="onDrawerButtonTap"></NavigationButton>
+        <!-- 
+        Use the ActionItem for IOS with position set to left. Using the
+        NavigationButton as a side-drawer button in iOS is not possible,
+        because its function is to always navigate back in the application.
+        -->
+        <ActionItem icon="res://menu" 
+            android:visibility="collapsed" 
+            tap="onDrawerButtonTap"
+            ios.position="left">
+        </ActionItem>
+        <Label text="About"></Label>
+    </ActionBar>
+
+    <StackLayout class="page__content">
+        <Label textWrap="true"  class="body m-x-10 m-t-10"  text="This app was developed by Blaise Mahoro in fulfillment of requirements for Assignment 11 and 12 of CMSC 4233 (or 5233) in the Spring 2020 course."/>
+        <StackLayout class="m-10"></StackLayout>
+        <Label textWrap="true" class="body m-x-10"  text="You need to enter a valid public ip address or dns address. Then, the app calls an IP Geolocation API that returns info about the provided. After that, the app gets how far that host is from this device. "/>
+    </StackLayout>
+</Page>

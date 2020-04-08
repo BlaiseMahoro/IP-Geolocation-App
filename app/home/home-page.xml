@@ -1,0 +1,47 @@
+<Page
+    navigatingTo="onNavigatingTo"  
+    xmlns="http://schemas.nativescript.org/tns.xsd">
+
+    <ActionBar>
+        <!-- 
+        Use the NavigationButton as a side-drawer button in Android
+        because ActionItems are shown on the right side of the ActionBar
+        -->
+        <NavigationButton ios:visibility="collapsed" icon="res://menu" tap="onDrawerButtonTap"></NavigationButton>
+        <!-- 
+        Use the ActionItem for IOS with position set to left. Using the
+        NavigationButton as a side-drawer button in iOS is not possible,
+        because its function is to always navigate back in the application.
+        -->
+        <ActionItem icon="res://menu" 
+            android:visibility="collapsed" 
+            tap="onDrawerButtonTap"
+            ios.position="left">
+        </ActionItem>
+        <Label text="Home"></Label>
+    </ActionBar>
+
+    <GridLayout  rows="auto, auto,auto,*"  class="page__content">
+      <Label text="IP Lookup" row="0" class="h1 text-center m-t-5" />
+      <GridLayout row="1"  columns="200,*" class="m-t-30" >
+      <TextField col="0" hint="Enter  a valid public IP" id="search_id" class=" m-t-10"></TextField>
+      <button col="1" class="-primary -rounded-lg" text="Search" tap="{{search}}"></button>
+    </GridLayout>
+    <StackLayout row="2">
+    <Label text="*Leave field empty to use this device's public ip address. Expected IP Format: xx.xx.xx.xx "  textWrap="true" class="body  m-x-5" />
+    <StackLayout row="0" class="hr m-10"></StackLayout>
+    <Label row="1" text="Search Results:" class="body text-center m-x-5"/>
+    <Label text="{{error_msg}}" class="body text-center m-x-5" textWrap="true" color="red" />
+    </StackLayout>
+    <GridLayout row="3" rows="auto, auto,auto,auto,auto" columns="auto,*">
+        <Label row="0" col="0" text="IP:" class="body  m-x-5 m-y-5"/>
+        <Label row="0" col="1" text="{{ip_add}}" class="body  m-x-5 m-y-5"/>
+        <Label row="1" col="0" text="Country:" class="body  m-x-5 m-y-5"/>
+        <Label row="1" col="1" text="{{country}}" class="body  m-x-5 m-y-5"/>
+        <Label row="3" col="0" text="Timezone:" class="body  m-x-5 m-y-5"/>
+        <Label row="3" col="1" text="{{timezone}}" class="body  m-x-5 m-y-5"/>
+        <Label row="4" col="0" text="Distance away:" class="body  m-x-5 m-y-5"/>
+        <Label row="4" col="1" text="- " class="body  m-x-5 m-y-5"/>  
+    </GridLayout>
+</GridLayout>
+</Page>
