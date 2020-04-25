@@ -21,14 +21,14 @@
         <Label text="Home"></Label>
     </ActionBar>
 
-    <GridLayout  rows="auto, auto,auto,*"  class="page__content">
+    <GridLayout  rows="auto, auto,auto,*"  class="page__content" backgroundColor="{{bgColor}}" color="{{textColor}}">
       <Label text="IP Lookup" row="0" class="h1 text-center m-t-5" />
       <GridLayout row="1"  columns="200,*" class="m-t-30" >
-      <TextField col="0" hint="Enter  a valid public IP" id="search_id" class=" m-t-10"></TextField>
+      <TextField col="0" hint="Valid public IP/Domain Name" color="{{textColor}}" id="search_id" class=" m-t-10"></TextField>
       <button col="1" class="-primary -rounded-lg" text="Search" tap="{{search}}"></button>
     </GridLayout>
     <StackLayout row="2">
-    <Label text="*Leave field empty to use this device's public ip address. Expected IP Format: xx.xx.xx.xx "  textWrap="true" class="body  m-x-5" />
+    <Label text="*Leave the field empty to use this device's public ip address. Expected IP Format: xx.xx.xx.xx "  textWrap="true" class="body  m-x-5" />
     <StackLayout row="0" class="hr m-10"></StackLayout>
     <Label row="1" text="Search Results:" class="body text-center m-x-5"/>
     <Label text="{{error_msg}}" class="body text-center m-x-5" textWrap="true" color="red" />
@@ -41,7 +41,7 @@
         <Label row="3" col="0" text="Timezone:" class="body  m-x-5 m-y-5"/>
         <Label row="3" col="1" text="{{timezone}}" class="body  m-x-5 m-y-5"/>
         <Label row="4" col="0" text="Distance away:" class="body  m-x-5 m-y-5"/>
-        <Label row="4" col="1" text="- " class="body  m-x-5 m-y-5"/>  
+        <Label row="4" col="1" text="{{distance}}" class="body  m-x-5 m-y-5"/>  
     </GridLayout>
 </GridLayout>
 </Page>

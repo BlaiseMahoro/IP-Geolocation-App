@@ -21,8 +21,21 @@
         <Label text="FAQ"></Label>
     </ActionBar>
 
-    <GridLayout class="page__content">
-        <Label class="page__content-icon fas" text="&#xf005;"></Label>
-        <Label class="page__content-placeholder" text="<!-- Page content goes here -->"></Label>
+    <ScrollView>
+    <GridLayout class="page__content" rows="auto, auto, auto,auto, auto, auto, auto" backgroundColor="{{bgColor}}" color="{{textColor}}">
+
+        <Label textWrap="true" row="0"  class="h3 m-x-10 m-t-10"  text="How to search for an IP Address?" color="gray"/>
+        <Label textWrap="true" row="1" class="body m-x-15 m-t-10"  text="You need to enter a valid public IP address in the search field and click search."/>
+        <Label textWrap="true" row="2"  class="h3 m-x-10 m-t-10"  text="Why I keep getting an error message?" color="gray"/>
+        <Label textWrap="true" row="3" class="body m-x-15 m-t-10"  text="Make sure you enter a valid IP with . separating the 4 parts each part containing a number between 0 and 255. Also, do not use any of the following because they are private IPs."/>
+        <GridLayout row ="4" rows="auto, auto, auto">
+            <Label textWrap="true" row="0" class="body m-x-25 m-t-10"  text="0.0.0.0 to 10.255.255.255"/>
+            <Label textWrap="true" row="1" class="body m-x-25 m-t-10"  text="1172.16.0.0 to 172.31.255.255"/>
+            <Label textWrap="true" row="2" class="body m-x-25 m-t-10"  text="192.168.0.0 to 192.168.255.255"/>
+        </GridLayout>
+        <!-- <Label textWrap="true" row="5" class="body m-x-15 m-t-10"  text="***The distance you get is the distance from the host's timezone and the searched device's timezone. We are currently working on giving a more accurate distance. The issue was to find a free api that provides accurate geolocations that provides SSL Encryption which is require in Android 9 and later."/> -->
+        <Label textWrap="true" row="5" class="body m-x-15 m-t-10"  text="***New: This app provides info about IP address and Domain Names (like Google.com)."/>
+        <Label textWrap="true" row="6" class="body m-x-15 m-t-10"  text="Contact support@ip_geo.com with issues."/>
     </GridLayout>
+</ScrollView>
 </Page>

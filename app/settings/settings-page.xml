@@ -20,9 +20,19 @@
         </ActionItem>
         <Label text="Settings"></Label>
     </ActionBar>
-
-    <GridLayout class="page__content">
-        <Label class="page__content-icon fas" text="&#xf013;"></Label>
-        <Label class="page__content-placeholder" text="<!-- Page content goes here -->"></Label>
+    
+    <GridLayout class="page__content" backgroundColor="{{bgColor}}" color="{{textColor}}">
+        <GridLayout  backgroundColor="{{bgColor}}" rows="auto,auto,auto,auto,auto,*">
+            <Label class="body  m-x-5 m-y-5" row="0" text="Pick theme: "  />
+            <ListPicker row="1" id="theme-pick" items="{{themes}}"   selectedIndex="{{curr_theme}}" loaded="{{onListPickerLoaded}}"/>
+            <!-- <Label row="2" text="Pick font size:" fontSize="{{size}}" color="{{textColor}}"/>
+            <ListPicker row="3" id="font-pick" items="{{fonts}}" fontSize = "{{size}}" color="{{textColor}}" selectedIndex="{{curr_font}}" />-->
+            <GridLayout row ="4" columns="*" tap="{{onApplyTap}}"> 
+                <!-- <Button col="0" text="Cancel" backgroundColor="gray" /> -->
+                <Button col="1" text="Apply changes " backgroundColor="gray"/>
+            </GridLayout>
+            
+        </GridLayout>
+        
     </GridLayout>
 </Page>
