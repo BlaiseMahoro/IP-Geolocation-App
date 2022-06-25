@@ -17,7 +17,7 @@
   "dependencies": {
     "@nativescript/theme": "~2.3.3",
     "nativescript-ui-sidedrawer": "~8.0.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.7",
     "rxjs": "^6.4.0",
     "tns-core-modules": "~6.5.0",
     "tz-lookup": "^6.1.25",
